@@ -6,7 +6,7 @@
 #    By: floblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/28 13:37:40 by floblanc          #+#    #+#              #
-#    Updated: 2019/01/28 14:34:01 by floblanc         ###   ########.fr        #
+#    Updated: 2019/01/29 18:08:27 by floblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ LIB = libft/
 CC = gcc
 FLG = -Wall -Werror -Wextra
 
-all : $(NAME)
+all : $(NAME1)
 
-$(NAME) : $(INC) $(SRC) $(OBJ)
+$(NAME1) : $(INC) $(SRC) $(OBJ)
 	make -C $(LIB)
 	gcc $(FLG) -c %(SRC) $(INC)
 	gcc $(FLGS) -o %(NAME1) $(OBJ1) libft/libft.a
