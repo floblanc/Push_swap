@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   use_ss.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/29 16:14:17 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/30 16:53:30 by floblanc         ###   ########.fr       */
+/*   Created: 2019/01/30 18:29:18 by floblanc          #+#    #+#             */
+/*   Updated: 2019/01/30 18:38:12 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libft/libft.h"
-/////////
-////////
+#include "push_swap.h"
 
-#include <stdio.h>
-
-
-/////////////
-///////////
-///////////
-
-
-
-typedef	struct		s_rule
+void	use_ss(int *a, int *b)
 {
-	int				rule;
-	struct	s_rule	*next;
-}					t_rule;
-
-int					*stockArg(int ac, char **av);
-int					stock_rules(t_rule **begin);
-
-#endif
+	use_sa(a, b);
+	use_sb(a, b);
+}

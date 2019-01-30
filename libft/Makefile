@@ -6,7 +6,7 @@
 #    By: floblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/12 10:09:35 by floblanc          #+#    #+#              #
-#    Updated: 2019/01/29 18:04:40 by floblanc         ###   ########.fr        #
+#    Updated: 2019/01/30 17:25:23 by floblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ SRCS = ft_memset.c\
 	   ft_puttab.c\
 	   ft_strsearch.c\
 	   ft_tab3size.c\
-	   get_next_line.c
+	   get_next_line_changed.c
 
 OBJS = $(SRCS:.c=.o)
 
