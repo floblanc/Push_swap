@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:58:02 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/31 15:15:30 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/01/31 16:00:06 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ void	checker(int ac, char **av)
 int		main(int ac, char **av)
 {
 	if (ac > 1)
-		checker(ac, av);
+		ret = checker(ac, av);
 	return (0);
 }
