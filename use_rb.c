@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   use_ss.c                                           :+:      :+:    :+:   */
+/*   use_rb.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 18:29:18 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/31 10:47:44 by floblanc         ###   ########.fr       */
+/*   Created: 2019/01/31 11:14:05 by floblanc          #+#    #+#             */
+/*   Updated: 2019/01/31 11:21:13 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	use_ss(t_stock **a, t_stock **b)
+void	use_rb(t_stock **a, t_stock **b)
 {
-	use_sa(a, b);
-	use_sb(a, b);
+	t_stock	*save;
+	t_stock *current;
+
+	(void)a;
+	if (*b && (*b)->next)
+	{
+		save = *b;
+		*b = (*b)->next;
+		save->next = 0;
+		current = *b;
+		while (current->next)
+			current = current->next;
+		current->next = save;
+	}
 }

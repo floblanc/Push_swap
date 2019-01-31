@@ -6,60 +6,50 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:58:02 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/30 18:34:43 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/01/31 15:15:30 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_fct(void	*(*fct))
+void	check_all_false(t_stock **a, t_stock **rule)
 {
-	fct[0] = use_sa;
-	fct[1] = use_sb;
-	fct[2] = use_ss;
-	fct[3] = use_pa;
-	fct[4] = use_pb;
-	fct[5] = use_ra;
-	fct[6] = use_rb;
-	fct[7] = use_rr;
-	fct[8] = use_rra;
-	fct[9] = use_rrb;
-	fct[10] = use_rrr;
+	if (*a)
+		free_lst(a);
+	if (*rule)
+		free_lst(rule);
 }
 
 void	checker(int ac, char **av)
 {
 	int		i;
-	int		*pile_a;
-	int		*pile_b[ac - 1];
-	t_rule	*begin;
-	void	(*fct[11])(int *a, int *b);
+	t_stock	*pile_a;
+	t_stock	*pile_b;
+	t_stock	*begin_rule;
+	void	(*fct[11])(t_stock **a, t_stock **b);
 
 	init_fct(fct);
 	i = 0;
-	begin = 0;
-	pile_a = stockArg(ac, av);
-	if (!(pile_a) || !(stock_rules(&begin)))
+	begin_rule = 0;
+	pile_a = 0;
+	pile_b = 0;
+	if (!(stock_arg(ac, av, &pile_a)) || !(stock_rules(&begin_rule)))
 	{
 		write(1, "Error\n", 6);
+		check_all_false(&pile_a, &begin_rule);
 		return ;
 	}
-	while (begin)
+	while (begin_rule)
 	{
-		fct[begin->rule - 1](pile_a, pile_b);
-		begin = begin->next;
+		fct[begin_rule->data - 1](&pile_a, &pile_b);
+		begin_rule = begin_rule->next;
 	}
-	while (i < ac - 2 && tab[i] < tab[i + 1])
-		i++;
-	if (i == ac - 1)
-		write(1, "OK\n", 3);
-	else
-		write(1, "KO\n", 3);
+	((lst_is_sort(&pile_a, ac)) ? write(1, "OK\n", 3) : write(1, "KO\n", 3));
 }
 
 int		main(int ac, char **av)
 {
 	if (ac > 1)
 		checker(ac, av);
-	return(0);
+	return (0);
 }

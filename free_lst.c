@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   use_ss.c                                           :+:      :+:    :+:   */
+/*   free_lst.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 18:29:18 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/31 10:47:44 by floblanc         ###   ########.fr       */
+/*   Created: 2019/01/31 10:08:54 by floblanc          #+#    #+#             */
+/*   Updated: 2019/01/31 10:09:24 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	use_ss(t_stock **a, t_stock **b)
+void	free_lst(t_stock **begin)
 {
-	use_sa(a, b);
-	use_sb(a, b);
+	t_stock	*current;
+	t_stock	*before;
+
+	if (*begin)
+	{
+		before = *begin;
+		current = before->next;
+		free(before);
+		*begin = 0;
+		while (current)
+		{
+			before = current;
+			current = current->next;
+			free(before);
+		}
+	}
 }

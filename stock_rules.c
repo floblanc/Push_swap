@@ -6,53 +6,13 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 15:22:30 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/30 17:26:59 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/01/31 14:52:18 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_lst(t_rule **begin)
-{
-	t_rule	*current;
-	t_rule	*before;
-
-	if (*begin)
-	{
-		before = *begin;
-		current = before->next;
-		free(before);
-		*begin = 0;
-		while (current)
-		{
-			before = current;
-			current = current->next;
-			free(before);
-		}
-	}
-}
-
-void	addToList(t_rule **begin, int data)
-{
-	t_rule	*new;
-	t_rule	*current;
-
-	if (!(new = (t_rule*)malloc(sizeof(t_rule) * 1)))
-		return ;
-	new->rule = data;
-	new->next = 0;
-	if (!(*begin))
-		*begin = new;
-	else
-	{
-		current = *begin;
-		while (current->next)
-			current = current->next;
-		current->next = new;
-	}
-}
-
-int		ruleValide(char *str)
+int		rule_valide(char *str)
 {
 	if (ft_strcmp(str, "sa") == 0)
 		return (1);
@@ -80,22 +40,20 @@ int		ruleValide(char *str)
 		return (0);
 }
 
-int		stock_rules(t_rule **begin)
+int		stock_rules(t_stock **begin)
 {
 	char	*str;
 	int		check;
 
 	while ((get_next_line_changed(0, &str) > 0))
 	{
-		if (!(check = ruleValide(str)))
+		if (!(check = rule_valide(str)))
 		{
 			free_lst(begin);
-			break ;
+			return (0);
 		}
 		else
-			addToList(begin, check);
+			add_to_list(begin, check);
 	}
-	if (*begin)
-		return (1);
-	return (0);
+	return (1);
 }

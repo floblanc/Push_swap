@@ -6,20 +6,23 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 18:29:18 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/30 18:34:35 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/01/31 10:47:19 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	use_sa(int *a, int *b)
+void	use_sa(t_stock **a, t_stock **b)
 {
-	int	tmp;
+	int		tmp;
+	t_stock *after;
 
-	if (a[0] && a[1])
+	(void)b;
+	if (*a && (*a)->next)
 	{
-		tmp = a[0];
-		a[0] = a[1];
-		a[1] = tmp;
+		after = (*a)->next;
+		tmp = (*a)->data;
+		(*a)->data = after->data;
+		after->data = tmp;
 	}
 }
