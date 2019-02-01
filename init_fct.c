@@ -6,13 +6,13 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 14:35:50 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 12:29:58 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/01 18:04:36 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_fct(void (*fct[11])(t_stock**, t_stock**))
+void	init_fct(void (*fct[11])(t_stock**, t_stock**, int))
 {
 	fct[0] = use_sa;
 	fct[1] = use_sb;

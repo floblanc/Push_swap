@@ -6,28 +6,64 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 11:12:28 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 14:40:32 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/01 19:05:19 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	make_it_roll(t_stock **a, t_stock **b, int pos_s, int pos_c)
+void	a_is_best(t_stock *a, t_stock *b, int ac)
 {
+	int		pos_c;
+	int		pos_s;
+	t_stock	*current;
+	t_stock *smaller;
 
-	if (pos_c - pos_s < pos_s)
+	smaller = *a;
+	current = smaller->next;
+	pos_c = 1;
+	pos_s = 0;
+	find_smaller(&current, &smaller, &pos_s, &pos_c);
+	while ((*a)->data != smaller->data)
 	{
-		use_rra(a, b);
-		write(1, "rra\n", 4);
+		if (pos_c - pos_s < pos_s)
+			use_rra(a, b, 1);
+		else
+			use_ra(a, b, 1);
 	}
-	else
-	{
-		use_ra(a, b);
-		write(1, "ra\n", 3);
-	}
+	if (lst_is_sort(a, ac))
+		return ;
+	use_pb(a, b, 1);
 }
 
-void	find_smaller(t_stock **current, t_stock **smaller, int *s, int *c)
+void	b_is_best(t_stock *a, t_stock *b, ac)
+{
+	int		pos_c;
+	int		pos_s;
+	int		target;
+	t_stock	*current;
+
+	target = *b;
+	pos_c = 1;
+	pos_s = 0;
+	target = (*a)->data;
+	find_closer(&current, &target, &pos_s, &pos_c);
+	target += (*a)->data;
+	while ((*b)->data != target)
+	{
+		if (pos_c - pos_s < pos_s)
+			use_rrb(a, b, 1);
+		else
+			use_rb(a, b, 1);
+	}
+	use_pb(a, b, 1);
+}
+
+int	find_closer(t_stock **current, int target, int *s, int *c)
+{
+}
+
+int	find_smaller(t_stock **current, t_stock **smaller, int *s, int *c)
 {
 	while (*current)
 	{
@@ -39,6 +75,7 @@ void	find_smaller(t_stock **current, t_stock **smaller, int *s, int *c)
 		*current = (*current)->next;
 		(*c)++;
 	}
+	return ((*c - *s < *s) ? *c - *s : *s);
 }
 
 void	select_sort(t_stock **a, t_stock **b, int ac)
@@ -49,22 +86,9 @@ void	select_sort(t_stock **a, t_stock **b, int ac)
 	t_stock *smaller;
 
 	while ((*a)->next && !(a_is_sort(a)))
-	{	
-		smaller = *a;
-		current = smaller->next;
-		pos_c = 1;
-		pos_s = 0;
-		find_smaller(&current, &smaller, &pos_s, &pos_c);
-		while ((*a)->data != smaller->data)
-			make_it_roll(a, b, pos_s, pos_c);
-		if (lst_is_sort(a, ac))
-			return ;
-		use_pb(a, b);
-		write(1, "pb\n", 3);
+	{
+
 	}
 	while (*b)
-	{
-		use_pa(a, b);
-		write(1, "pa\n", 3);
-	}
+		use_pa(a, b, 1);
 }

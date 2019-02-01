@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 16:14:17 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 14:39:54 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/01 18:05:17 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,18 @@ int					lst_is_sort(t_stock **a, int ac);
 int					a_is_sort(t_stock **a);
 void				add_to_list(t_stock **begin, int data);
 void				free_lst(t_stock **begin);
-void				init_fct(void (*fct[11])(t_stock**, t_stock**));
-void				use_sa(t_stock **a, t_stock **b);
-void				use_sb(t_stock **a, t_stock **b);
-void				use_ss(t_stock **a, t_stock **b);
-void				use_pa(t_stock **a, t_stock **b);
-void				use_pb(t_stock **a, t_stock **b);
-void				use_ra(t_stock **a, t_stock **b);
-void				use_rb(t_stock **a, t_stock **b);
-void				use_rr(t_stock **a, t_stock **b);
-void				use_rra(t_stock **a, t_stock **b);
-void				use_rrb(t_stock **a, t_stock **b);
-void				use_rrr(t_stock **a, t_stock **b);
+void				init_fct(void (*fct[11])(t_stock**, t_stock**, int));
+void				use_sa(t_stock **a, t_stock **b, int w);
+void				use_sb(t_stock **a, t_stock **b, int w);
+void				use_ss(t_stock **a, t_stock **b, int w);
+void				use_pa(t_stock **a, t_stock **b, int w);
+void				use_pb(t_stock **a, t_stock **b, int w);
+void				use_ra(t_stock **a, t_stock **b, int w);
+void				use_rb(t_stock **a, t_stock **b, int w);
+void				use_rr(t_stock **a, t_stock **b, int w);
+void				use_rra(t_stock **a, t_stock **b, int w);
+void				use_rrb(t_stock **a, t_stock **b, int w);
+void				use_rrr(t_stock **a, t_stock **b, int w);
 void				select_sort(t_stock **a, t_stock **b, int ac);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:58:02 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 12:10:56 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/01 18:04:20 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	checker(int ac, char **av)
 	t_stock	*pile_a;
 	t_stock	*pile_b;
 	t_stock	*begin_rule;
-	void	(*fct[11])(t_stock **a, t_stock **b);
+	void	(*fct[11])(t_stock **a, t_stock **b, int w);
 
 	init_fct(fct);
 	i = 0;
@@ -32,7 +32,7 @@ void	checker(int ac, char **av)
 	}
 	while (begin_rule)
 	{
-		fct[begin_rule->data - 1](&pile_a, &pile_b);
+		fct[begin_rule->data - 1](&pile_a, &pile_b, 0);
 		begin_rule = begin_rule->next;
 	}
 	((lst_is_sort(&pile_a, ac)) ? write(1, "OK\n", 3) : write(1, "KO\n", 3));
