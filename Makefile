@@ -6,7 +6,7 @@
 #    By: floblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/28 13:37:40 by floblanc          #+#    #+#              #
-#    Updated: 2019/01/31 15:10:15 by floblanc         ###   ########.fr        #
+#    Updated: 2019/02/01 15:19:25 by floblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,11 @@ SRC = checker.c\
 	  add_to_list.c\
 	  free_lst.c\
 	  init_fct.c\
-	  use_sa.c\
-	  use_sb.c\
-	  use_ss.c\
-	  use_pa.c\
-	  use_pb.c\
-	  use_ra.c\
-	  use_rb.c\
-	  use_rr.c\
-	  use_rra.c\
-	  use_rrb.c\
-	  use_rrr.c
+	  use_sp.c\
+	  use_allr.c\
+	  use_allrr.c\
+	  push_swap.c\
+	  select_sort.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -40,19 +34,20 @@ OBJ1 = checker.o\
 	   add_to_list.o\
 	   free_lst.o\
 	   init_fct.o\
-	   use_sa.o\
-	   use_sb.o\
-	   use_ss.o\
-	   use_pa.o\
-	   use_pb.o\
-	   use_ra.o\
-	   use_rb.o\
-	   use_rr.o\
-	   use_rra.o\
-	   use_rrb.o\
-	   use_rrr.o
+	   use_sp.o\
+	   use_allr.o\
+	   use_allrr.o
 
-OBJ2 = 
+OBJ2 = push_swap.o\
+	   stock_arg.o\
+	   lst_is_sort.o\
+	   add_to_list.o\
+	   free_lst.o\
+	   use_sp.o\
+	   use_allr.o\
+	   use_allrr.o\
+	   select_sort.o
+
 INC = push_swap.h
 LIB = libft/
 CC = gcc
@@ -61,8 +56,8 @@ FLG = -Wall -Werror -Wextra
 all : $(NAME1)
 
 $(NAME1) : $(INC) $(SRC) $(OBJ)
-	make -C $(LIB)
-	gcc $(FLG) -c $(SRC) $(INC)
+	make -C $(LIB) -j
+	gcc $(FLG) -c $(SRC) -I$(INC)
 	gcc $(FLGS) -o $(NAME1) $(OBJ1) libft/libft.a
 	gcc $(FLGS) -o $(NAME2) $(OBJ2) libft/libft.a
 

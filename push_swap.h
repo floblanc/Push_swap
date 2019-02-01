@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 16:14:17 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/31 14:42:14 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/01 14:39:54 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef	struct		s_stock
 int					stock_arg(int ac, char **av, t_stock **begin);
 int					stock_rules(t_stock **begin);
 int					lst_is_sort(t_stock **a, int ac);
+int					a_is_sort(t_stock **a);
 void				add_to_list(t_stock **begin, int data);
 void				free_lst(t_stock **begin);
 void				init_fct(void (*fct[11])(t_stock**, t_stock**));
@@ -48,5 +49,6 @@ void				use_rr(t_stock **a, t_stock **b);
 void				use_rra(t_stock **a, t_stock **b);
 void				use_rrb(t_stock **a, t_stock **b);
 void				use_rrr(t_stock **a, t_stock **b);
+void				select_sort(t_stock **a, t_stock **b, int ac);
 
 #endif
