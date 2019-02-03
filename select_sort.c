@@ -6,13 +6,13 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 11:12:28 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 19:05:19 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/03 19:55:41 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	a_is_best(t_stock *a, t_stock *b, int ac)
+/*void	a_is_best(t_stock *a, t_stock *b, int ac)
 {
 	int		pos_c;
 	int		pos_s;
@@ -77,10 +77,14 @@ int	find_smaller(t_stock **current, t_stock **smaller, int *s, int *c)
 	}
 	return ((*c - *s < *s) ? *c - *s : *s);
 }
-
+*/
 void	select_sort(t_stock **a, t_stock **b, int ac)
 {
-	int		pos_c;
+
+	(void)a;
+	(void)b;
+	(void)ac;
+/*	int		pos_c;
 	int		pos_s;
 	t_stock	*current;
 	t_stock *smaller;
@@ -90,5 +94,5 @@ void	select_sort(t_stock **a, t_stock **b, int ac)
 
 	}
 	while (*b)
-		use_pa(a, b, 1);
+		use_pa(a, b, 1);*/
 }

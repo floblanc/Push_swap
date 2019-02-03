@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 16:14:17 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 18:05:17 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/03 19:51:12 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void				use_rra(t_stock **a, t_stock **b, int w);
 void				use_rrb(t_stock **a, t_stock **b, int w);
 void				use_rrr(t_stock **a, t_stock **b, int w);
 void				select_sort(t_stock **a, t_stock **b, int ac);
+void				display(t_stock **a, t_stock **b);
 
 #endif

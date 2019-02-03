@@ -6,7 +6,7 @@
 #    By: floblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/28 13:37:40 by floblanc          #+#    #+#              #
-#    Updated: 2019/02/01 15:19:25 by floblanc         ###   ########.fr        #
+#    Updated: 2019/02/03 19:51:48 by floblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC = checker.c\
 	  use_allr.c\
 	  use_allrr.c\
 	  push_swap.c\
-	  select_sort.c
+	  select_sort.c\
+	  display.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -36,7 +37,8 @@ OBJ1 = checker.o\
 	   init_fct.o\
 	   use_sp.o\
 	   use_allr.o\
-	   use_allrr.o
+	   use_allrr.o\
+	   display.o
 
 OBJ2 = push_swap.o\
 	   stock_arg.o\
