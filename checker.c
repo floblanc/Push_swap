@@ -30,14 +30,14 @@ void	checker(int ac, char **av)
 		write(1, "Error\n", 6);
 		return ;
 	}
-	display(&pile_a, &pile_b);
 	while (begin_rule)
 	{
-		usleep(250000);
-		fct[begin_rule->data - 1](&pile_a, &pile_b, 0);
-		begin_rule = begin_rule->next;
 		display(&pile_a, &pile_b);
+		fct[begin_rule->data - 1](&pile_a, &pile_b, 0, 1);
+		begin_rule = begin_rule->next;
+		usleep(250000);
 	}
+	display(&pile_a, &pile_b);
 	((lst_is_sort(&pile_a, ac)) ? write(1, "OK\n", 3) : write(1, "KO\n", 3));
 	free_lst(&pile_a);
 	free_lst(&begin_rule);
