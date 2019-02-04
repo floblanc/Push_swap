@@ -6,7 +6,7 @@
 #    By: floblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/28 13:37:40 by floblanc          #+#    #+#              #
-#    Updated: 2019/02/03 19:51:48 by floblanc         ###   ########.fr        #
+#    Updated: 2019/02/04 13:52:03 by floblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,10 @@ SRC = checker.c\
 	  use_allr.c\
 	  use_allrr.c\
 	  push_swap.c\
-	  select_sort.c\
+	  select_sort_basic.c\
+	  select_sort_boosted.c\
+	  rotate_and_three_sort.c\
+	  ft_lstlen.c\
 	  display.c
 
 OBJ = $(SRC:.c=.o)
@@ -48,7 +51,10 @@ OBJ2 = push_swap.o\
 	   use_sp.o\
 	   use_allr.o\
 	   use_allrr.o\
-	   select_sort.o
+	   select_sort_basic.o\
+	   select_sort_boosted.o\
+	   rotate_and_three_sort.o\
+	   ft_lstlen.o
 
 INC = push_swap.h
 LIB = libft/

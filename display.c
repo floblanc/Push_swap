@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 19:36:20 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/03 20:48:56 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/04 18:29:13 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	display(t_stock **a, t_stock **b)
 
 	currenta = *a;
 	currentb = *b;
+	system("clear");
 	write(1, "------a------|------b------\n", 28);
 	while (currenta || currentb)
 	{

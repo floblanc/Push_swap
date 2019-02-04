@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 18:29:18 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 18:01:03 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/04 18:34:26 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	use_sa(t_stock **a, t_stock **b, int w)
 		tmp = (*a)->data;
 		(*a)->data = after->data;
 		after->data = tmp;
+		if (w)
+			write(1, "sa\n", 3);
 	}
-	if (w)
-		write(1, "sa\n", 3);
 }
 
 void	use_sb(t_stock **a, t_stock **b, int w)
@@ -41,16 +41,25 @@ void	use_sb(t_stock **a, t_stock **b, int w)
 		tmp = (*b)->data;
 		(*b)->data = after->data;
 		after->data = tmp;
+		if (w)
+			write(1, "sb\n", 3);
 	}
-	if (w)
-		write(1, "sb\n", 3);
 }
 
 void	use_ss(t_stock **a, t_stock **b, int w)
 {
-	use_sa(a, b, 0);
-	use_sb(a, b, 0);
-	if (w)
+	int	sa;
+	int	sb;
+
+	sa = 0;
+	sb = 0;
+	if (*a && (*a)->next && (!(*b) || !((*b)->next)))
+		sa = 1;
+	if (*b && (*b)->next && (!(*a) || !((*a)->next)))
+		sb = 1;
+	use_sa(a, b, sa);
+	use_sb(a, b, sb);
+	if (w && !(sa) && !(sb))
 		write(1, "ss\n", 3);
 }
 
@@ -66,9 +75,9 @@ void	use_pa(t_stock **a, t_stock **b, int w)
 		(*b)->next = *a;
 		*a = *b;
 		*b = save;
+		if (w)
+			write(1, "pa\n", 3);
 	}
-	if (w)
-		write(1, "pa\n", 3);
 }
 
 void	use_pb(t_stock **a, t_stock **b, int w)
@@ -83,7 +92,7 @@ void	use_pb(t_stock **a, t_stock **b, int w)
 		(*a)->next = *b;
 		*b = *a;
 		*a = save;
+		if (w)
+			write(1, "pb\n", 3);
 	}
-	if (w)
-		write(1, "pb\n", 3);
 }

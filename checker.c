@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:58:02 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/03 21:13:16 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/04 18:39:01 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	checker(int ac, char **av)
 	display(&pile_a, &pile_b);
 	while (begin_rule)
 	{
-		sleep(1);
+		usleep(250000);
 		fct[begin_rule->data - 1](&pile_a, &pile_b, 0);
 		begin_rule = begin_rule->next;
 		display(&pile_a, &pile_b);

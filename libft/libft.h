@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 13:21:30 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/30 17:25:38 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/04 18:05:16 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # define BUFF_SIZE 32
 
+unsigned int		ft_abs(int nb);
 int					get_next_line_changed(const int fd, char **line);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);

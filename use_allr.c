@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 11:14:05 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 17:49:14 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/04 18:34:46 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ void	use_ra(t_stock **a, t_stock **b, int w)
 		while (current->next)
 			current = current->next;
 		current->next = save;
+		if (w)
+			write(1, "ra\n", 3);
 	}
-	if (w)
-		write(1, "ra\n", 3);
+
 }
 
 void	use_rb(t_stock **a, t_stock **b, int w)
@@ -47,15 +48,24 @@ void	use_rb(t_stock **a, t_stock **b, int w)
 		while (current->next)
 			current = current->next;
 		current->next = save;
+		if (w)
+			write(1, "rb\n", 3);
 	}
-	if (w)
-		write(1, "rb\n", 3);
 }
 
 void	use_rr(t_stock **a, t_stock **b, int w)
 {
-	use_ra(a, b, 0);
-	use_rb(a, b, 0);
-	if (w)
+	int	ra;
+	int	rb;
+
+	ra = 0;
+	rb = 0;
+	if (*a && (*a)->next && (!(*b) || !((*b)->next)))
+		ra = 1;
+	if (*b && (*b)->next && (!(*a) || !((*a)->next)))
+		rb = 1;
+	use_ra(a, b, ra);
+	use_rb(a, b, rb);
+	if (w && !(ra) && !(rb))
 		write(1, "rr\n", 3);
 }

@@ -6,11 +6,31 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 14:37:06 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 14:39:21 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/04 12:19:17 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int		b_is_sort(t_stock **b)
+{
+	t_stock	*current;
+	t_stock	*before;
+
+	if (*b && (*b)->next)
+	{
+		before = *b;
+		current = before->next;
+		while (current)
+		{
+			if (before->data < current->data)
+				return (0);
+			before = current;
+			current = current->next;
+		}
+	}
+	return (1);
+}
 
 int		a_is_sort(t_stock **a)
 {
