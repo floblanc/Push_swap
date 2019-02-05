@@ -33,7 +33,7 @@ void	checker(int ac, char **av)
 	while (begin_rule)
 	{
 		display(&pile_a, &pile_b);
-		fct[begin_rule->data - 1](&pile_a, &pile_b, 0, 1);
+		fct[begin_rule->data - 1](&pile_a, &pile_b, v/* -v valus*/);
 		begin_rule = begin_rule->next;
 		usleep(250000);
 	}
