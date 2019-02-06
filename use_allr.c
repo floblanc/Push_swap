@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 11:14:05 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/06 15:36:36 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 16:44:51 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	use_ra(t_stock **a, t_stock **b, int w)
 		if (w)
 			write(1, "ra\n", 3);
 	}
-
 }
 
 void	use_rb(t_stock **a, t_stock **b, int w)

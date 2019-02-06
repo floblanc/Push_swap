@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 10:34:54 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/06 14:20:47 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 16:37:23 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	sort_three(t_stock **begin, char c)
 		if ((*begin)->data < middle->data && (*begin)->data < end->data)
 			use_rb(0, begin, 1);
 		else if (middle->data < (*begin)->data && middle->data < end->data)
-			use_rrb(0 ,begin, 1);
+			use_rrb(0, begin, 1);
 		middle = (*begin)->next;
 		if ((*begin)->data < middle->data)
 			use_sb(0, begin, 1);

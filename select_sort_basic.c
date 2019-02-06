@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 11:12:28 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/04 18:35:25 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 16:36:55 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,12 @@ void	select_sort_basic(t_stock **a, t_stock **b, int ac)
 	t_stock *smaller;
 
 	while (ft_lstlen(a) > 3 && !(a_is_sort(a)))
-	{	
+	{
 		smaller = *a;
 		current = smaller->next;
 		pos_c = 1;
 		pos_s = 0;
 		find_smaller(&current, &smaller, &pos_s, &pos_c);
-
 		while ((*a)->data != smaller->data)
 			make_it_roll(a, b, pos_s, pos_c);
 		if (lst_is_sort(a, ac))

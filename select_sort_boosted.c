@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 11:12:28 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/06 16:00:03 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 16:43:54 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		way_to_closest(t_stock **b, int value, int len, int c)
 		current = closest->next;
 	while (current)
 	{
-		if ((ft_abs(value - closest->data) >= ft_abs(value - current->data) 
+		if ((ft_abs(value - closest->data) >= ft_abs(value - current->data)
 					&& value - current->data > 0)
 				|| (value - current->data > 0 && value - closest->data < 0))
 		{
@@ -67,7 +67,6 @@ int		order_b(t_stock **b, int len, int c)
 	}
 	return ((len <= c / 2) ? len : (c - len) * -1);
 }
-
 
 void	select_sort_boosted(t_stock **a, t_stock **b)
 {

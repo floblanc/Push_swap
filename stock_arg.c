@@ -6,18 +6,18 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 15:13:41 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 11:39:15 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 18:07:37 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		there_is_double(int ac, char **av, t_stock **begin)
+int		there_is_double(int ac, char **av, t_stock **begin, int *v)
 {
 	t_stock	*current;
 	int		i;
 
-	i = 1;
+	i = 1 + *v;
 	while (i < ac)
 	{
 		current = *begin;
@@ -36,12 +36,17 @@ int		there_is_double(int ac, char **av, t_stock **begin)
 	return (1);
 }
 
-int		stock_arg(int ac, char **av, t_stock **begin)
+int		stock_arg(int ac, char **av, t_stock **begin, int *v)
 {
 	int		i;
 	int		j;
 
 	i = 1;
+	if (ft_strcmp(av[i], "-v") == 0)
+	{
+		*v = 1;
+		i++;
+	}
 	while (i < ac)
 	{
 		j = ft_strlen(av[i]);
@@ -57,5 +62,5 @@ int		stock_arg(int ac, char **av, t_stock **begin)
 			return (0);
 		i++;
 	}
-	return (there_is_double(ac, av, begin));
+	return (there_is_double(ac, av, begin, v));
 }

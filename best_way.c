@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 11:13:22 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/06 15:34:41 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 16:45:11 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	stock_best_way(t_stock **a, t_stock **b, int pos)
 	}
 	val_a = front_a(a, pos);
 	val_b = way_to_closest(b, current->data, 0, 1);
-	//printf("a = %d et b = %d\n", val_a ,val_b);
 	use_best_way(a, b, val_a, val_b);
 }
 
@@ -80,10 +79,10 @@ int		best_way(t_stock **a, t_stock **b, int len, int c)
 	if (*a)
 		cur = best->next;
 	while (cur)
-	{//printf("c : %d->d = %d\n", c, cur->data);
-		if (full_way(front_a(a, len), way_to_closest(b, best->data, 0, 1)) 
+	{
+		if (full_way(front_a(a, len), way_to_closest(b, best->data, 0, 1))
 				> full_way(front_a(a, c), way_to_closest(b, cur->data, 0, 1)))
-		{//printf("best etait %d->d = %d\n", len, best->data);
+		{
 			best = cur;
 			len = c;
 		}

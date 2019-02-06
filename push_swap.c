@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 15:29:06 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/06 16:03:58 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 17:45:35 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,16 @@ int		main(int ac, char **av)
 {
 	t_stock	*beginarg;
 	t_stock *b;
+	int		v;
 
+	v = 0;
 	if (ac > 1)
 	{
 		beginarg = 0;
 		b = 0;
-		if (!(stock_arg(ac, av, &beginarg)))
+		if (!(stock_arg(ac, av, &beginarg, &v)) || v)
 		{
+			free_lst(&beginarg);
 			write(1, "Error\n", 6);
 			return (0);
 		}
