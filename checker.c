@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:58:02 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/06 18:13:55 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 18:15:31 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		main(int ac, char **av)
 	int	v;
 
 	v = 0;
-	if (ac == 2 && (ft_strcmp(av[1], "-v") == 0 ))
+	if (ac == 2 && (ft_strcmp(av[1], "-v") == 0))
 		return (0);
 	if (ac > 1)
 		checker(ac, av);
