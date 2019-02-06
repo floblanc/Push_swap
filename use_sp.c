@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 18:29:18 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/04 18:34:26 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 13:49:29 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	use_sa(t_stock **a, t_stock **b, int w)
 	t_stock *after;
 
 	(void)b;
-	if (*a && (*a)->next)
+	if (a && *a && (*a)->next)
 	{
 		after = (*a)->next;
 		tmp = (*a)->data;
@@ -35,7 +35,7 @@ void	use_sb(t_stock **a, t_stock **b, int w)
 	t_stock *after;
 
 	(void)a;
-	if (*b && (*b)->next)
+	if (b && *b && (*b)->next)
 	{
 		after = (*b)->next;
 		tmp = (*b)->data;
@@ -53,9 +53,9 @@ void	use_ss(t_stock **a, t_stock **b, int w)
 
 	sa = 0;
 	sb = 0;
-	if (*a && (*a)->next && (!(*b) || !((*b)->next)))
+	if (a && *a && (*a)->next && (!(b) || !(*b) || !((*b)->next)))
 		sa = 1;
-	if (*b && (*b)->next && (!(*a) || !((*a)->next)))
+	if (b && *b && (*b)->next && (!(a) || !(*a) || !((*a)->next)))
 		sb = 1;
 	use_sa(a, b, sa);
 	use_sb(a, b, sb);
@@ -67,7 +67,7 @@ void	use_pa(t_stock **a, t_stock **b, int w)
 {
 	t_stock	*save;
 
-	if (*b)
+	if (b && *b)
 	{
 		save = 0;
 		if ((*b)->next)
@@ -84,7 +84,7 @@ void	use_pb(t_stock **a, t_stock **b, int w)
 {
 	t_stock	*save;
 
-	if (*a)
+	if (a && *a)
 	{
 		save = 0;
 		if ((*a)->next)

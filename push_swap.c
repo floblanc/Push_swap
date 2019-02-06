@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 15:29:06 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/04 18:30:19 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 16:03:58 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	choose_algo(t_stock **a, t_stock **b, int ac)
 		use_sa(a, b, 1);
 	else if (ac == 4)
 		sort_three(a, 'a');
-	else if (ac < 11 || b_is_sort(a))
+	else if (ac <= 11 || b_is_sort(a))
 		select_sort_basic(a, b, ac);
 	else
-		select_sort_boosted(a, b, ac);
+		select_sort_boosted(a, b);
 }
 
 int		main(int ac, char **av)

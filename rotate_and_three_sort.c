@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 10:34:54 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/04 17:59:55 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 14:20:47 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	r_rotate_b(t_stock **b, int i)
 {
 	while (i++ != 0)
-		use_rrb(b, 0, 1);
+		use_rrb(0, b, 1);
 }
 
 void	r_rotate_a(t_stock **a, int i)
@@ -27,7 +27,7 @@ void	r_rotate_a(t_stock **a, int i)
 void	rotate_b(t_stock **b, int i)
 {
 	while (i-- != 0)
-		use_rb(b, 0, 1);
+		use_rb(0, b, 1);
 }
 
 void	rotate_a(t_stock **a, int i)

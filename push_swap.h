@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 16:14:17 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/04 19:31:26 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 13:34:17 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ int					lst_is_sort(t_stock **a, int ac);
 int					a_is_sort(t_stock **a);
 int					b_is_sort(t_stock **b);
 int					ft_lstlen(t_stock **begin);
+int					best_way(t_stock **a, t_stock **b, int len, int c);
+int					way_to_closest(t_stock **b, int value, int len, int c);
+int					front_a(t_stock **a, int pos);
+int					order_b(t_stock **b, int len, int c);
 void				add_to_list(t_stock **begin, int data);
 void				free_lst(t_stock **begin);
 void				init_fct(void (*fct[11])(t_stock**, t_stock**, int));
@@ -58,6 +62,9 @@ void				rotate_a(t_stock **a, int i);
 void				r_rotate_a(t_stock **a, int i);
 void				rotate_b(t_stock **b, int i);
 void				r_rotate_b(t_stock **b, int i);
+void				rotate_r(t_stock **a, t_stock **b, int i);
+void				r_rotate_r(t_stock **a, t_stock **b, int i);
+void				stock_best_way(t_stock **a, t_stock **b, int pos);
 void				display(t_stock **a, t_stock **b);
 
 #endif

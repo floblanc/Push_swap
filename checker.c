@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:58:02 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/04 18:39:01 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 13:40:34 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	checker(int ac, char **av)
 		write(1, "Error\n", 6);
 		return ;
 	}
+	display(&pile_a, &pile_b);
 	while (begin_rule)
 	{
-		display(&pile_a, &pile_b);
-		fct[begin_rule->data - 1](&pile_a, &pile_b, v/* -v valus*/);
+		usleep(100000);
+		fct[begin_rule->data - 1](&pile_a, &pile_b, 0);
 		begin_rule = begin_rule->next;
-		usleep(250000);
+		display(&pile_a, &pile_b);
 	}
-	display(&pile_a, &pile_b);
 	((lst_is_sort(&pile_a, ac)) ? write(1, "OK\n", 3) : write(1, "KO\n", 3));
 	free_lst(&pile_a);
 	free_lst(&begin_rule);

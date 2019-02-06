@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 11:22:55 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/04 18:34:59 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 15:37:02 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	use_rra(t_stock **a, t_stock **b, int w)
 	t_stock *current;
 
 	(void)b;
-	if (*a && (*a)->next)
+	if (a && *a && (*a)->next)
 	{
 		before = *a;
 		current = (*a)->next;
@@ -41,7 +41,7 @@ void	use_rrb(t_stock **a, t_stock **b, int w)
 	t_stock *current;
 
 	(void)a;
-	if (*b && (*b)->next)
+	if (b && *b && (*b)->next)
 	{
 		before = *b;
 		current = (*b)->next;
@@ -65,12 +65,12 @@ void	use_rrr(t_stock **a, t_stock **b, int w)
 
 	rra = 0;
 	rrb = 0;
-	if (*a && (*a)->next && (!(*b) || !((*b)->next)))
+	if (a && *a && (*a)->next && (!(b) || !(*b) || !((*b)->next)))
 		rra = 1;
-	if (*b && (*b)->next && (!(*a) || !((*a)->next)))
+	if (b && *b && (*b)->next && (!(a) || !(*a) || !((*a)->next)))
 		rrb = 1;
 	use_rra(a, b, rra);
 	use_rrb(a, b, rrb);
 	if (w && !(rra) && !(rrb))
-		write(1, "rrr\n", 3);
+		write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 11:14:05 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/04 18:34:46 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/06 15:36:36 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	use_ra(t_stock **a, t_stock **b, int w)
 	t_stock *current;
 
 	(void)b;
-	if (*a && (*a)->next)
+	if (a && *a && (*a)->next)
 	{
 		save = *a;
 		*a = (*a)->next;
@@ -39,7 +39,7 @@ void	use_rb(t_stock **a, t_stock **b, int w)
 	t_stock *current;
 
 	(void)a;
-	if (*b && (*b)->next)
+	if (b && *b && (*b)->next)
 	{
 		save = *b;
 		*b = (*b)->next;
@@ -60,9 +60,9 @@ void	use_rr(t_stock **a, t_stock **b, int w)
 
 	ra = 0;
 	rb = 0;
-	if (*a && (*a)->next && (!(*b) || !((*b)->next)))
+	if (a && *a && (*a)->next && (!(b) || !(*b) || !((*b)->next)))
 		ra = 1;
-	if (*b && (*b)->next && (!(*a) || !((*a)->next)))
+	if (b && *b && (*b)->next && (!(a) || !(*a) || !((*a)->next)))
 		rb = 1;
 	use_ra(a, b, ra);
 	use_rb(a, b, rb);
