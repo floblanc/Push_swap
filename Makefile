@@ -6,7 +6,7 @@
 #    By: floblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/28 13:37:40 by floblanc          #+#    #+#              #
-#    Updated: 2019/02/07 17:34:08 by floblanc         ###   ########.fr        #
+#    Updated: 2019/02/07 18:37:59 by floblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ OBJ2 = push_swap.o\
 INC = push_swap.h
 LIB = libft/
 CC = gcc
-FLG = -Wall -Werror -Wextra -g3
+FLG = -Wall -Werror -Wextra
 
 all : $(NAME1)
 
