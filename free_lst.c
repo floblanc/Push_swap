@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 10:08:54 by floblanc          #+#    #+#             */
-/*   Updated: 2019/01/31 10:09:24 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/07 18:23:28 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	free_lst(t_stock **begin)
 	t_stock	*current;
 	t_stock	*before;
 
-	if (*begin)
+	if (begin && *begin)
 	{
 		before = *begin;
 		current = before->next;
-		free(before);
 		*begin = 0;
+		free(before);
 		while (current)
 		{
 			before = current;

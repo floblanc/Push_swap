@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 14:37:06 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/04 12:19:17 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/07 18:32:23 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ int		lst_is_sort(t_stock **a, int ac)
 		if (i != ac - 1)
 			return (0);
 	}
+	else
+		return (0);
 	return (1);
 }

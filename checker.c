@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 16:58:02 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/07 09:47:14 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/07 18:29:52 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	checker2(t_stock *begin_rule, t_stock *pile_a, int v, int ac)
 	}
 	(lst_is_sort(&pile_a, ac)) ? write(1, "OK\n", 3) : write(1, "KO\n", 3);
 	free_lst(&pile_a);
+	free_lst(&pile_b);
 	free_lst(&begin_rule);
 }
 
@@ -47,10 +48,13 @@ void	checker(int ac, char **av)
 	pile_a = 0;
 	if (!(stock_arg(ac, av, &pile_a, &v)) || !(stock_rules(&begin_rule)))
 	{
+		free_lst(&pile_a);
+		free_lst(&begin_rule);
 		write(1, "Error\n", 6);
 		return ;
 	}
 	checker2(begin_rule, pile_a, v, ac - v);
+	free_lst(&begin_rule);
 }
 
 int		main(int ac, char **av)

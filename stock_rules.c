@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 15:22:30 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/01 11:37:21 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/07 18:28:59 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,21 @@ int		stock_rules(t_stock **begin)
 	char	*str;
 	int		check;
 
+	str = 0;
 	while ((get_next_line_changed(0, &str) > 0))
 	{
 		if (!(check = rule_valide(str)))
 		{
+			ft_strdel(&str);
 			free_lst(begin);
 			return (0);
 		}
 		else
 			add_to_list(begin, check);
+		if (str)
+			ft_strdel(&str);
 	}
+	if (str)
+		ft_strdel(&str);
 	return (1);
 }
