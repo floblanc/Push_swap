@@ -69,8 +69,11 @@ void	use_rrr(t_stock **a, t_stock **b, int w)
 		rra = 1;
 	if (b && *b && (*b)->next && (!(a) || !(*a) || !((*a)->next)))
 		rrb = 1;
-	use_rra(a, b, rra);
-	use_rrb(a, b, rrb);
+	if (w)
+	{
+		use_rra(a, b, rra);
+		use_rrb(a, b, rrb);
+	}
 	if (w && !(rra) && !(rrb))
 		write(1, "rrr\n", 4);
 }
