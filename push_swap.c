@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 15:29:06 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/07 18:55:50 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/13 15:40:28 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int		main(int ac, char **av)
 	int		v;
 
 	v = 0;
+	beginarg = 0;
+	b = 0;
 	if (ac > 1)
 	{
-		beginarg = 0;
-		b = 0;
 		if (!(stock_arg(ac, av, &beginarg, &v)) || v)
 		{
 			free_lst(&beginarg);

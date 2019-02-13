@@ -6,7 +6,7 @@
 #    By: floblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/28 13:37:40 by floblanc          #+#    #+#              #
-#    Updated: 2019/02/07 18:37:59 by floblanc         ###   ########.fr        #
+#    Updated: 2019/02/13 16:00:55 by floblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,15 +63,14 @@ OBJ2 = push_swap.o\
 INC = push_swap.h
 LIB = libft/
 CC = gcc
-FLG = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3
 
 all : $(NAME1)
 
 $(NAME1) : $(INC) $(SRC) $(OBJ)
 	make -C $(LIB) -j
-	gcc $(FLG) -c $(SRC) -I$(INC)
-	gcc $(FLGS) -o $(NAME1) $(OBJ1) libft/libft.a
-	gcc $(FLGS) -o $(NAME2) $(OBJ2) libft/libft.a
+	$(CC) $(CFLAGS) -o $(NAME1) $(OBJ1) libft/libft.a
+	$(CC) $(CFLAGS) -o $(NAME2) $(OBJ2) libft/libft.a
 
 clean :
 	make clean -C $(LIB)

@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 10:07:33 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/07 18:14:55 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/13 15:30:58 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	add_to_list(t_stock **begin, int data)
 	t_stock	*current;
 
 	if (!(new = (t_stock*)malloc(sizeof(t_stock) * 1)))
-		return ;
+		exit (0);
 	new->data = data;
 	new->next = 0;
 	if (!(*begin))

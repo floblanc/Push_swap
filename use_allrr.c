@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 11:22:55 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/06 15:37:02 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/13 15:51:33 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,15 @@ void	use_rrr(t_stock **a, t_stock **b, int w)
 
 	rra = 0;
 	rrb = 0;
-	if (a && *a && (*a)->next && (!(b) || !(*b) || !((*b)->next)))
-		rra = 1;
-	if (b && *b && (*b)->next && (!(a) || !(*a) || !((*a)->next)))
-		rrb = 1;
 	if (w)
 	{
-		use_rra(a, b, rra);
-		use_rrb(a, b, rrb);
+		if (a && *a && (*a)->next && (!(b) || !(*b) || !((*b)->next)))
+			rra = 1;
+		if (b && *b && (*b)->next && (!(a) || !(*a) || !((*a)->next)))
+			rrb = 1;
 	}
+	use_rra(a, b, rra);
+	use_rrb(a, b, rrb);
 	if (w && !(rra) && !(rrb))
 		write(1, "rrr\n", 4);
 }

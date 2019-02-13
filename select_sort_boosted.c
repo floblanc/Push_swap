@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 11:12:28 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/07 15:09:15 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/13 15:47:54 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		way_to_closest(t_stock **b, int value, int len, int c)
 	while (current)
 	{
 		if ((ft_abs(value - closest->data) >= ft_abs(value - current->data)
-					&& value - current->data > 0)
+			&& value - current->data > 0)
 				|| (value - current->data > 0 && value - closest->data < 0))
 		{
 			closest = current;

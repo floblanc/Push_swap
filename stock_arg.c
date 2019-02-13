@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 15:13:41 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/07 17:56:00 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/13 16:10:32 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		there_is_double(int ac, char **av, t_stock **begin, int *v)
 	t_stock	*current;
 	int		i;
 
+	current = 0;
 	i = 1 + *v;
 	while (i < ac)
 	{

@@ -6,7 +6,7 @@
 #    By: floblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/12 10:09:35 by floblanc          #+#    #+#              #
-#    Updated: 2019/02/04 18:04:41 by floblanc         ###   ########.fr        #
+#    Updated: 2019/02/13 16:02:05 by floblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,14 +80,16 @@ SRCS = ft_memset.c\
 
 OBJS = $(SRCS:.c=.o)
 
-FLGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 
 INC = libft.h
+
+CC = gcc
 
 all : $(NAME)
 
 $(NAME) : $(INC) $(OBJS) $(SRCS)
-	gcc $(FLGS) -c $(SRCS) -I$(INC)
+	$(CC) $(CFLAGS) -c $(SRCS) -I$(INC)
 	ar rcs $(NAME) $(OBJS)
 
 clean :

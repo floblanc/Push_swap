@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 18:29:18 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/06 13:49:29 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/13 15:53:56 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,13 @@ void	use_ss(t_stock **a, t_stock **b, int w)
 
 	sa = 0;
 	sb = 0;
-	if (a && *a && (*a)->next && (!(b) || !(*b) || !((*b)->next)))
-		sa = 1;
-	if (b && *b && (*b)->next && (!(a) || !(*a) || !((*a)->next)))
-		sb = 1;
+	if (w)
+	{
+		if (a && *a && (*a)->next && (!(b) || !(*b) || !((*b)->next)))
+			sa = 1;
+		if (b && *b && (*b)->next && (!(a) || !(*a) || !((*a)->next)))
+			sb = 1;
+	}
 	use_sa(a, b, sa);
 	use_sb(a, b, sb);
 	if (w && !(sa) && !(sb))
