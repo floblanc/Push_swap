@@ -6,7 +6,7 @@
 /*   By: floblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 10:28:23 by floblanc          #+#    #+#             */
-/*   Updated: 2019/02/13 18:10:36 by floblanc         ###   ########.fr       */
+/*   Updated: 2019/02/14 12:04:54 by floblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,6 @@ int		ft_read_gnl(int fd, char **line, char **str)
 	}
 	return (ret);
 }
-
-/*
- ** ft_strdup(str); a la place de "Error\n" : l85
- */
 
 int		get_next_line_changed(const int fd, char **line)
 {
