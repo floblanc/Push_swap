@@ -11,7 +11,9 @@
 # **************************************************************************** #
 
 NAME1 = checker
+
 NAME2 = push_swap
+
 SRC = checker.c\
 	  stock_arg.c\
 	  stock_rules.c\
@@ -61,15 +63,22 @@ OBJ2 = push_swap.o\
 	   best_way.o
 
 INC = push_swap.h
+
 LIB = libft/
+
 CC = gcc
+
 CFLAGS = -Wall -Werror -Wextra
 
-all : $(NAME1)
+all : lib $(NAME1) $(NAME2)
 
-$(NAME1) : $(INC) $(SRC) $(OBJ)
+lib :
 	make -C $(LIB) -j
+
+$(NAME1) : lib $(INC) $(SRC) $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME1) $(OBJ1) libft/libft.a
+
+$(NAME2) : lib $(INC) $(SRC) $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME2) $(OBJ2) libft/libft.a
 
 clean :
